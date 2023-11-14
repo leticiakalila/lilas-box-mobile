@@ -36,11 +36,11 @@
 ## Tugas 8
 
 1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
-    a. Navigator.push()
+    * Navigator.push()
         - Metode ini digunakan untuk menambahkan halaman baru ke tumpukan navigasi.
         - Halaman sebelumnya tetap ada di tumpukan, dan pengguna dapat kembali ke halaman sebelumnya.
         - 
-    b. Navigator.pushReplacement()
+    * Navigator.pushReplacement()
         - Metode ini digunakan untuk menambahkan halaman baru ke tumpukan navigasi dan menghapus semua halaman di atasnya dari tumpukan.
         - Tidak dapat kembali ke halaman sebelumnya karena halaman sebelumnya sudah di hapus atau di pop
         - 
