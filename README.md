@@ -83,3 +83,17 @@
     - menggunakan validator di setiap TextFormField untuk menghandle ketika input tidak sesuai dengan tipe data nya dan menggunakan validator untuk form input yang kosong dengan mengecek apakah value == null atau isEmpty().
     - menambakan tombol tambah item pada menu.dart dan menggunakan navigator.push() di file left_drawer.dart untuk dapat mengmebalikan ke page sebelumnya dan navigator.push() akan mengarahkan ke shopFormPge 
     - membuat widget ListTitle untuk tulisan opsi, ketika memilih halaman saya menggunakan navigator.pushReplacement() karena tidak perlu kembali ke halaman sebelumnya dan menambahkan widget navigator.push() di left_drawer yang akan mengarahkan ke myhomepage dan shopFormPage.
+
+### Tugas 9
+1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+    TYa,dalam pengembangan Flutter, data JSON dapat diakses secara langsung sebagai Map<String, dynamic> atau List<Map<String, dynamic>>, tergantung pada struktur JSON yang diterima. Meskipun demikian, pendekatan ini mungkin tidak optimal karena kekurangan dalam efisiensi dan keamanan.
+
+2. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+
+3. Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
+ 
+4. Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+ 
+5. Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.
+ 
+6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
