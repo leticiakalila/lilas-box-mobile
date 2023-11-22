@@ -86,14 +86,34 @@
 
 ### Tugas 9
 1. Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
-    TYa,dalam pengembangan Flutter, data JSON dapat diakses secara langsung sebagai Map<String, dynamic> atau List<Map<String, dynamic>>, tergantung pada struktur JSON yang diterima. Meskipun demikian, pendekatan ini mungkin tidak optimal karena kekurangan dalam efisiensi dan keamanan.
+    - Ya,dalam pengembangan Flutter, data JSON dapat diakses secara langsung sebagai Map<String, dynamic> atau List<Map<String, dynamic>>, tergantung pada struktur JSON yang diterima. Meskipun demikian, pendekatan ini mungkin tidak optimal karena kekurangan dalam efisiensi dan keamanan.
 
 2. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
 
+    - CookieRequest adalah sebuah kelas yang bertanggung jawab untuk mengatur permintaan HTTP dan sekaligus mengelola cookies. Fungsinya mencakup manajemen cookies untuk setiap permintaan dan tanggapan HTTP, mempertahankan sesi pengguna selama aplikasi tetap terbuka, memastikan konsistensi sesi untuk setiap permintaan, dan menjaga efisiensi dengan menghindari pembuatan instance CookieRequest yang tidak perlu.
+
 3. Jelaskan mekanisme pengambilan data dari JSON hingga dapat ditampilkan pada Flutter.
+    - Fetch data --> menggunakan HTTP request (GET) untuk mengambil data JSON dari web service
+    - JSON deserialization --> mengubah data JSON menjadi objek Dart. Dilakukan dengan cara mengubah menjadi struktur map seperti di soal pertama
+    - Penggunaan Data --> Menggunakan data yang telah diubah untuk mengisi state atau variabel dalam aplikasi Flutter.
+    - Menampilkan Data --> Menampiilkan data yang telah dikonversi menjadi bentuk-bentuk widget dalam aplikasi Flutter.
  
 4. Jelaskan mekanisme autentikasi dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+    - Proses dimulai dengan pengguna memasukkan data ke dalam formulir (Input). Data tersebut kemudian dikirim ke Django melalui permintaan HTTP menggunakan metode POST. Django menerima data tersebut dan melakukan proses autentikasi. Hasil dari proses tersebut dikirim kembali ke aplikasi Flutter melalui respons HTTP. Aplikasi Flutter kemudian menampilkan hasil respons tersebut kepada pengguna.
  
 5. Sebutkan seluruh widget yang kamu pakai pada tugas ini dan jelaskan fungsinya masing-masing.
+    - Scaffold --> membuat struktur dasar tampilan aplikasi
+    - ListView.builder --> membuat tampilan daftar yang bersifat dinamis
+    - TextFormField --> Digunakan untuk input teks dari pengguna
+    - ElevatedButton --> Tombol untuk melakukan sebuah action, seperti submit form
  
 6. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+    - awalnya saya membuat app authentication di projek Django shyyourbox, kemudian menginstall dependencies yang diperlukan
+    - Selanjutnya, saya membuat function untuk menerima autentikasi di app authentication yang dapat digunakan di projek Flutter
+    - Kemudian saya menginstall package dengan melakukan flutter pub add provider dan flutter pub add pbp_django_auth
+    - setelah itu pada bagian kode saya memodifikasi root widget sehingga menggunakan Provider
+    - Membuat file login.dart untuk membuat tampilan login
+    - Membuat model custom dengan Quicktype
+    - Menambahkan dependensi HTTP dengan menambahkan package http, dan melakukan fetch data dari projek Django dengan membuat file baru list_product.dart, tidak lupa untuk membuat routing yang sesuai dengan URL di projek Django, serta routingnya ke file lain di projek Flutter
+    - Melakukan integrasi form Flutter dengan layanan Django --> membuat function baru bernama create_product_flutter di main/views.py, dan melakukan routing pada urls.py seperti biasa.
+    - setelah itu saya membuat tombol see details di setiap item, dengan menambahkan Elevated Button, kemudian membuat model untuk detailk setiap item dan membuat halaman untuk detail item yang nanti akan mengimpor model detail item.
